@@ -1,3 +1,0 @@
-C:/Dev/Nebula/build/CMakeFiles/Nebula.dir
-C:/Dev/Nebula/build/CMakeFiles/edit_cache.dir
-C:/Dev/Nebula/build/CMakeFiles/rebuild_cache.dir
