@@ -1,5 +1,8 @@
 #include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
+#include <iostream>
+#define pi 3.1415926535897932384626433832795
+#define print(x) std::cerr << x << std::endl
 
 int main(void)
 {
