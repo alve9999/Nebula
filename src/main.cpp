@@ -40,7 +40,7 @@ int main(void)
         ImGui::NewFrame();
 
         ImGui::Begin("My name is window, ImGUI window");
-        ImGui::Text("Hello there");
+        ImGui::ShowDemoWindow();
         ImGui::End();
         
         ImGui::Render();
