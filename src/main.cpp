@@ -2,14 +2,10 @@
 #include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
 #include <iostream>
-#define pi 3.1415926535897932384626433832795
-#define print(x) std::cerr << x << std::endl
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 {
     glViewport(0, 0, width, height);
-
-    print(width,height);
 }  
 
 void processInput(GLFWwindow *window)
