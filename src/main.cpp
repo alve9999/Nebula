@@ -7,7 +7,6 @@
 int main(void)
 {
     GLFWwindow* window;
-    print("hello");
 
     /* Initialize the library */
     if (!glfwInit())
