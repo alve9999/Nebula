@@ -11,4 +11,4 @@ glad.o: ../libs/glad/glad.c
 
 
 a.exe: ../src/main.cpp glad.o
-	g++ $(INCLUDES) ../src/main.cpp -o main.exe $(LINKLIBS)
+	g++ $(INCLUDES) ../src/main.cpp ../libs/glad/glad.c -o main.exe $(LINKLIBS)
