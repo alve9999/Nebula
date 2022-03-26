@@ -3,8 +3,8 @@ LINKLIBS=-L../libs/glad -L../libs/glfw -lglfw3 -lopengl32 -lgdi32 #-luser32 -lke
 
 SRC_DIR := ../src
 OBJ_DIR := obj
-
-all: a.exe
+SRC_FILES := $(wildcard $(SRC_DIR)/*.cpp)
+OBJ_FILES := $(patsubst $(SRC_DIR)/%.cpp,$(OBJ_DIR)/%.o,$(SRC_FILES))
 
 glad.o: ../libs/glad/glad.c
 	gcc -c $(INCLUDES) ../libs/glad/glad.c
