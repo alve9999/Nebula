@@ -5,7 +5,7 @@
 #include "init_graphics.h"
 
 
-void processInput(GLFWwindow *window)
+void process_input(GLFWwindow *window)
 {
     if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
         glfwSetWindowShouldClose(window, true);
@@ -19,7 +19,7 @@ int main(void)
     while(!glfwWindowShouldClose(window))
     {
         //process the inputs
-        processInput(window);
+        process_input(window);
 
         //render next fram
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
