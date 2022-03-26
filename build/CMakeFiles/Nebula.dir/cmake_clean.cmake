@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Nebula.dir/main.cpp.obj"
-  "CMakeFiles/Nebula.dir/main.cpp.obj.d"
+  "CMakeFiles/Nebula.dir/src/main.cpp.obj"
+  "CMakeFiles/Nebula.dir/src/main.cpp.obj.d"
   "Nebula.exe"
   "Nebula.exe.manifest"
   "Nebula.pdb"

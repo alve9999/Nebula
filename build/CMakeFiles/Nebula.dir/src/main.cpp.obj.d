@@ -1,4 +1,4 @@
-CMakeFiles/Nebula.dir/main.cpp.obj: C:\Dev\Nebula\main.cpp \
+CMakeFiles/Nebula.dir/src/main.cpp.obj: C:\Dev\Nebula\src\main.cpp \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\c++config.h \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\os_defines.h \

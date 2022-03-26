@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "C:/Dev/Nebula/main.cpp" "CMakeFiles/Nebula.dir/main.cpp.obj" "gcc" "CMakeFiles/Nebula.dir/main.cpp.obj.d"
+  "C:/Dev/Nebula/src/main.cpp" "CMakeFiles/Nebula.dir/src/main.cpp.obj" "gcc" "CMakeFiles/Nebula.dir/src/main.cpp.obj.d"
   )
 
 # Targets to which this target links.
