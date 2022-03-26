@@ -1,9 +1,9 @@
-INCLUDES=-I../include -I../include/imgui
-LINKLIBS=-L../libs/glad -L../libs/glfw -lglfw3 -lopengl32 -lgdi32 #-luser32 -lkernel32
+INCLUDES=-I../include
+LINKLIBS=-L../libs/sdl2 -lSDL2
 CPPFLAGS=$(INCLUDES)
 
 SRC_DIR := ../src
-SRC_DIR_LIBS := ../libs/imgui
+SRC_DIR_LIBS := ../libs
 OBJ_DIR := obj
 SRC_FILES := $(wildcard $(SRC_DIR)/*.cpp)
 SRC_FILES_LIBS := $(wildcard $(SRC_DIR_LIBS)/*.cpp)
@@ -17,8 +17,5 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
 $(OBJ_DIR)/%.o: $(SRC_DIR_LIBS)/%.cpp
 	g++ $(CPPFLAGS) $(CXXFLAGS) -c -o $@ $<
 
-$(OBJ_DIR)/glad.o: ../libs/glad/glad.c
-	gcc -c $(INCLUDES) ../libs/glad/glad.c -o $(OBJ_DIR)/glad.o
-
-a.exe: $(SRC_FILES) $(SRC_FILES_LIBS) $(OBJ_FILES) $(OBJ_DIR)/glad.o
-	g++ $(INCLUDES) $(OBJ_FILES) $(OBJ_DIR)/glad.o -o main.exe $(LINKLIBS)
+a.exe: $(SRC_FILES) $(SRC_FILES_LIBS) $(OBJ_FILES)
+	g++ $(INCLUDES) $(OBJ_FILES) -o main.exe $(LINKLIBS)

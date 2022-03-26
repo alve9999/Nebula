@@ -1,60 +1,53 @@
-#include <glad/glad.h>
-#include <GLFW/glfw3.h>
-#include <glm/glm.hpp>
-#include <iostream>
-#include <imgui.h>
-#include <imgui_impl_glfw.h>
-#include <imgui_impl_opengl3.h>
-#include "init_graphics.h"
+//Using SDL and standard IO
+#include <SDL2/SDL.h>
+#include <stdio.h>
 
+//Screen dimension constants
+const int SCREEN_WIDTH = 640;
+const int SCREEN_HEIGHT = 480;
 
-void process_input(GLFWwindow *window)
+int main( int argc, char* args[] )
 {
-    if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
-        glfwSetWindowShouldClose(window, true);
-}
+	//The window we'll be rendering to
+	SDL_Window* window = NULL;
+	
+	//The surface contained by the window
+	SDL_Surface* screenSurface = NULL;
 
-int main(void)
-{
-    GLFWwindow* window = init_graphics(800, 600);
+	//Initialize SDL
+	if( SDL_Init( SDL_INIT_VIDEO ) < 0 )
+	{
+		printf( "SDL could not initialize! SDL_Error: %s\n", SDL_GetError() );
+	}
+	else
+	{
+		//Create window
+		window = SDL_CreateWindow( "SDL Tutorial", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
+		if( window == NULL )
+		{
+			printf( "Window could not be created! SDL_Error: %s\n", SDL_GetError() );
+		}
+		else
+		{
+			//Get window surface
+			screenSurface = SDL_GetWindowSurface( window );
 
-    IMGUI_CHECKVERSION();
-    ImGui::CreateContext();
-    ImGuiIO& io = ImGui::GetIO(); (void)io;
-    ImGui::StyleColorsDark();
-    ImGui_ImplGlfw_InitForOpenGL(window, true);
-    ImGui_ImplOpenGL3_Init("#version 330");
+			//Fill the surface white
+			SDL_FillRect( screenSurface, NULL, SDL_MapRGB( screenSurface->format, 0xFF, 0xFF, 0xFF ) );
+			
+			//Update the surface
+			SDL_UpdateWindowSurface( window );
 
-    /* Loop until the user closes the window */
-    while(!glfwWindowShouldClose(window))
-    {
-        //process the inputs
-        process_input(window);
+			//Wait two seconds
+			SDL_Delay( 2000 );
+		}
+	}
 
-        //render next fram
-        glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-        glClear(GL_COLOR_BUFFER_BIT);
+	//Destroy window
+	SDL_DestroyWindow( window );
 
-        ImGui_ImplOpenGL3_NewFrame();
-        ImGui_ImplGlfw_NewFrame();
-        ImGui::NewFrame();
+	//Quit SDL subsystems
+	SDL_Quit();
 
-        ImGui::Begin("My name is window, ImGUI window");
-        ImGui::ShowDemoWindow();
-        ImGui::End();
-        
-        ImGui::Render();
-        ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
-
-        //Poll events and swap buffer
-        glfwSwapBuffers(window);
-        glfwPollEvents();
-    }
-
-    ImGui_ImplOpenGL3_Shutdown();
-    ImGui_ImplGlfw_Shutdown();
-    ImGui::DestroyContext();
-
-    glfwTerminate();
-    return 0;
+	return 0;
 }
