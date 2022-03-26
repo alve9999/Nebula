@@ -4,6 +4,20 @@
 #include <iostream>
 #define pi 3.1415926535897932384626433832795
 #define print(x) std::cerr << x << std::endl
+
+void framebuffer_size_callback(GLFWwindow* window, int width, int height)
+{
+    glViewport(0, 0, width, height);
+
+    print(width,height);
+}  
+
+void processInput(GLFWwindow *window)
+{
+    if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+        glfwSetWindowShouldClose(window, true);
+}
+
 int main(void)
 {
     GLFWwindow* window;
@@ -26,7 +40,8 @@ int main(void)
     glfwMakeContextCurrent(window);
 
     //init glad
-    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)){
+    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
+    {
         std::cout << "Failed to initialize GLAD" << std::endl;
         return -1;
     }
@@ -34,16 +49,20 @@ int main(void)
     //set viewport
     glViewport(0, 0, 800, 600);
 
+    glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);  
+
     /* Loop until the user closes the window */
-    while (!glfwWindowShouldClose(window))
+    while(!glfwWindowShouldClose(window))
     {
-        /* Render here */
+        //process the inputs
+        processInput(window);
+
+        //render next fram
+        glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
 
-        /* Swap front and back buffers */
+        //Poll events and swap buffer
         glfwSwapBuffers(window);
-
-        /* Poll for and process events */
         glfwPollEvents();
     }
 
