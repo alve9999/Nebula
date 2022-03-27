@@ -5,16 +5,20 @@ Player::Player() {
 }
 void Player::update(){
     if (Input::KeyDown(SDL_SCANCODE_LEFT)) {
-        update_velocity(-speed, 0);
+        velocity.y = 0;
+        velocity.x = -speed;
     }
     else if (Input::KeyDown(SDL_SCANCODE_UP)) {
-        update_velocity(0,-speed);
+        velocity.y = -speed;
+        velocity.x = 0;
     }
     else if (Input::KeyDown(SDL_SCANCODE_DOWN)) {
-        update_velocity(0,speed);
+        velocity.y = speed;
+        velocity.x = 0;
     }
     else if (Input::KeyDown(SDL_SCANCODE_RIGHT)) {
-        update_velocity(speed, 0);
+        velocity.y = 0;
+        velocity.x = speed;
     }
     render();
     update_position();
