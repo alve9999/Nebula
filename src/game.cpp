@@ -20,6 +20,7 @@ void handle_events()
 	SDL_Event event;
     SDL_PollEvent(&event);
     Input::Update();
+
     switch (event.type) {
         case SDL_QUIT:
             is_running = false;
@@ -31,7 +32,6 @@ void handle_events()
 
 void update()
 {
-
 }
 
 void render()
