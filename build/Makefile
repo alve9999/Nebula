@@ -1,5 +1,5 @@
 INCLUDES=-I../include
-LINKLIBS=-L../libs/sdl2 -lSDL2
+LINKLIBS=-L../libs/SDL2 -lmingw32 -lSDL2main -lSDL2
 CPPFLAGS=$(INCLUDES)
 
 SRC_DIR := ../src
