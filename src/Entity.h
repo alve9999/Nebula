@@ -4,9 +4,9 @@
 
 class Entity {
 public:
+    SDL_Texture* texture;
     glm::vec2 position;
     glm::vec2 velocity;
-    SDL_Texture* texture;
 
     virtual void update();
     void render();

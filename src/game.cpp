@@ -8,12 +8,13 @@ SDL_Window* window = nullptr;
 SDL_Renderer* renderer = nullptr;
 bool is_running = false;
 
-Player player = Player();
+Player player;
 
 void init(const char* title, int x, int y, int width, int height, int flags) {
     window = SDL_CreateWindow(title, x, y, width, height, flags);
     renderer = SDL_CreateRenderer(window, -1, 0);
     is_running = true;
+    player = Player();
 }
 
 void handle_events() {
