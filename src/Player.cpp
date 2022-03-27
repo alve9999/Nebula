@@ -8,7 +8,7 @@ Player::Player() {
     sprite = new Sprite("../sprites/player.bmp");
 }
 
-void Player::update() {
+void Player::Update() {
     if (Input::KeyDown(SDL_SCANCODE_LEFT)) {
         velocity.x = -1;
     }
