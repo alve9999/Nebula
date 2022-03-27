@@ -9,7 +9,7 @@ const uint8_t* Input::prev_state = SDL_GetKeyboardState(NULL);
 uint32_t Input::buttons = 0;
 uint32_t Input::prev_buttons = 0;
 
-void Input::Update()
+void Input::update()
 {
     prev_state = state;
     prev_buttons = buttons;
@@ -17,42 +17,42 @@ void Input::Update()
     buttons = SDL_GetMouseState(&mouse_pos.x, &mouse_pos.y);
 }
 
-bool Input::KeyDown(int key)
+bool Input::key_down(int key)
 {
     return state[key];
 }
 
-bool Input::KeyUp(int key)
+bool Input::key_up(int key)
 {
     return !state[key];
 }
 
-bool Input::KeyPressed(int key)
+bool Input::key_pressed(int key)
 {
     return !prev_state[key] && state[key];
 }
 
-bool Input::KeyReleased(int key)
+bool Input::key_released(int key)
 {
     return prev_state[key] && !state[key];
 }
 
-bool Input::MouseDown(int button)
+bool Input::mouse_down(int button)
 {
     return buttons && button;
 }
 
-bool Input::MouseUp(int button)
+bool Input::mouse_up(int button)
 {
     return buttons && !button;
 }
 
-bool Input::MousePressed(int button)
+bool Input::mouse_pressed(int button)
 {
     return (prev_buttons && !button) && (prev_buttons && button);
 }
 
-bool Input::MouseReleased(int button)
+bool Input::mouse_released(int button)
 {
     return (prev_buttons && button) && (prev_buttons && !button);
 }
