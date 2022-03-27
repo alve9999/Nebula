@@ -6,3 +6,4 @@ void Entity::update_position(){
 void Entity::render(){
     
 }
+void Entity::update(){}
