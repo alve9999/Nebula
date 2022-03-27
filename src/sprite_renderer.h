@@ -1,3 +1,6 @@
-#include <glm/glm.hpp>
+#pragma once
 
-void render_sprite(Sprite sprite, glm::vec2 pos);
+#include <glm/glm.hpp>
+#include "Sprite.h"
+
+void render_sprite(Sprite* sprite, glm::vec2 pos);

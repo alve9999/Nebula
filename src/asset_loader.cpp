@@ -1,8 +1,8 @@
 #include "asset_loader.h"
+#include "game.h"
 
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
-#include "game.h"
 
 SDL_Texture* load_texture(const char* asset_path)
 {
