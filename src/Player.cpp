@@ -6,6 +6,7 @@
 
 Player::Player() {
     sprite = new Sprite("../sprites/player.bmp");
+    position = glm::vec2(0,0);
 }
 
 void Player::update() {
