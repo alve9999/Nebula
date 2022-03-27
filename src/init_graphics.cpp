@@ -17,12 +17,3 @@ SDL_Window* init_window(int width, int height){
     }
     return window;
 }
-
-SDL_Surface* init_window_surface(SDL_Window* window){
-    SDL_Surface* window_surface = SDL_GetWindowSurface(window);
-
-    if(!window_surface){
-        std::cout << "Failed to get the surface from the window\n";
-    }
-    return window_surface;
-}
