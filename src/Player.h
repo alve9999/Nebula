@@ -8,5 +8,5 @@ public:
 
     Player();
 
-    void update();
+    void Update();
 };

@@ -8,15 +8,15 @@ Entity::Entity(){
     position = glm::vec2(0, 0);
     velocity = glm::vec2(0, 0);
 }
-void Entity::update_position() {
+void Entity::UpdatePosition() {
     position += velocity;
 }
 
-void Entity::update() {
+void Entity::Update() {
 
 }
 
-void Entity::render() {
+void Entity::Render() {
     if (sprite != nullptr) {
         render_sprite(sprite, position);
     }    

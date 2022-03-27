@@ -11,7 +11,7 @@ public:
 
     Entity();
 
-    virtual void update();
-    void render();
-    void update_position();
+    virtual void Update();
+    void Render();
+    void UpdatePosition();
 };
