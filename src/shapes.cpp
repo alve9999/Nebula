@@ -1,5 +1,10 @@
 #include "shapes.h"
-
+Rect::Rect(){
+    this->width = 0;
+    this->height = 0;
+    this->x = 0;
+    this->y = 0;
+}
 Rect::Rect(int width, int height,int x, int y)
 {
     this->width = width;
