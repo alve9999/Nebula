@@ -3,7 +3,7 @@
 #include "sprite_renderer.h"
 #include <SDL2/SDL.h>
 #include <iostream>
-Entiy::Entity(){
+Entity::Entity(){
     position = glm::vec2(0,0);
 }
 void Entity::update_position() {

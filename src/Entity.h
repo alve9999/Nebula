@@ -8,7 +8,7 @@ public:
     Sprite* sprite;
     glm::vec2 position;
     glm::vec2 velocity;
-
+    Entity();
     virtual void update();
     void render();
     void update_position();
