@@ -1,5 +1,7 @@
 #include "player.h"
 #include "asset_loader.h"
+#include "Input.h"
+#include "Sprite.h"
 #include <iostream>
 
 Player::Player() {

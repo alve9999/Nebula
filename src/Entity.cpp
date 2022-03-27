@@ -2,6 +2,7 @@
 #include "game.h"
 #include "sprite_renderer.h"
 #include <SDL2/SDL.h>
+#include <iostream>
 
 void Entity::update_position() {
     position += velocity;
