@@ -4,7 +4,7 @@
 class Player : public Entity 
 {
 public:
-    int speed;
+    int speed = 1;
 
     Player();
 
