@@ -1,9 +1,11 @@
 #include "player.h"
+#include "asset_loading.h"
 
 Player::Player() {
-
+    texture = load_texture("../sprites/player.bmp");
 }
-void Player::update(){
+
+void Player::update() {
     if (Input::KeyDown(SDL_SCANCODE_LEFT)) {
         velocity.y = 0;
         velocity.x = -speed;
@@ -20,7 +22,6 @@ void Player::update(){
         velocity.y = 0;
         velocity.x = speed;
     }
-    render();
     update_position();
 }
 

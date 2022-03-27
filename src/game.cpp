@@ -2,20 +2,21 @@
 
 #include <SDL2/SDL.h>
 #include "Input.h"
+#include "player.h"
 
 SDL_Window* window = nullptr;
 SDL_Renderer* renderer = nullptr;
 bool is_running = false;
 
-void init(const char* title, int x, int y, int width, int height, int flags)
-{
+Player player = Player();
+
+void init(const char* title, int x, int y, int width, int height, int flags) {
     window = SDL_CreateWindow(title, x, y, width, height, flags);
     renderer = SDL_CreateRenderer(window, -1, 0);
     is_running = true;
 }
 
-void handle_events()
-{
+void handle_events() {
     SDL_PumpEvents();
 	SDL_Event event;
     SDL_PollEvent(&event);
@@ -30,20 +31,18 @@ void handle_events()
     }
 }
 
-void update()
-{
+void update() {
+    player.update();
 }
 
-void render()
-{
+void render() {
     SDL_SetRenderDrawColor(renderer, 123, 30, 0, 255);
     SDL_RenderClear(renderer);
-
+    player.render();
     SDL_RenderPresent(renderer);
 }
 
-void clean()
-{
+void clean() {
     SDL_DestroyWindow(window);
     SDL_DestroyRenderer(renderer);
     SDL_Quit();
