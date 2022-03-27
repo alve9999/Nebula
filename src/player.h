@@ -1,9 +1,7 @@
 #include <glm/glm.hpp>
+#include "entity.h"
 
-class Player{
+class Player : Entity{
 public:
     Player();
-
-    glm::vec2 vel;
-    glm::vec2 pos;
 };
