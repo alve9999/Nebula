@@ -10,20 +10,24 @@ Player::Player() {
 
 void Player::update() {
     if (Input::KeyDown(SDL_SCANCODE_LEFT)) {
-        velocity.x = -speed;
+        velocity.x = -1;
     }
-    else if (Input::KeyDown(SDL_SCANCODE_UP)) {
-        velocity.y = -speed;
+    if (Input::KeyDown(SDL_SCANCODE_UP)) {
+        velocity.y = -1;
     }
-    else if (Input::KeyDown(SDL_SCANCODE_DOWN)) {
-        velocity.y = speed;
+    if (Input::KeyDown(SDL_SCANCODE_DOWN)) {
+        velocity.y = 1;
     }
-    else if (Input::KeyDown(SDL_SCANCODE_RIGHT)) {
-        velocity.x = speed;
+    if (Input::KeyDown(SDL_SCANCODE_RIGHT)) {
+        velocity.x = 1;
     }
-    update_position();
-    velocity.x = 0;
-    velocity.y = 0;
-    std::cout << "Position: " << position.x << ", " << position.y << std::endl;
+    if (velocity != glm::vec2(0, 0))
+    {
+        velocity = glm::normalize(velocity);
+        velocity *= speed;
+        update_position();
+        velocity.x = 0;
+        velocity.y = 0;
+    }
 }
 
