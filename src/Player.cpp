@@ -26,5 +26,7 @@ void Player::update() {
         velocity.x = speed;
     }
     update_position();
+    velocity.x = 0;
+    velocity.y = 0;
 }
 
