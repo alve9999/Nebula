@@ -7,6 +7,18 @@ Rect::Rect(int width, int height,int x, int y)
     this->x = x;
     this->y = y;
 }
+int Rect::top(){
+    return this->y;
+}
+int Rect::bottom(){
+    return y+height;
+}
+int Rect::right(){
+    return x+width;
+}
+int Rect::left(){
+    return x;
+}
 
 Circle::Circle(int radius,int x, int y)
 {
