@@ -15,9 +15,7 @@ public:
         Dirt,
         Stone,
         Grass,
-        Cobblestone,
+        Cobblestone
     };
-    std::map<int,SDL_Texture*>
-
-
+    std::map<int,SDL_Texture*> texture_map;
 };
