@@ -13,16 +13,16 @@ private:
     static uint32_t prev_buttons;
 
 public:
-    static void Update(); 
-    static bool KeyDown(int key);
-    static bool KeyUp(int key);
-    static bool KeyPressed(int key);
-    static bool KeyReleased(int key);
+    static void update(); 
+    static bool key_down(int key);
+    static bool key_up(int key);
+    static bool key_pressed(int key);
+    static bool key_released(int key);
 
-    static bool MouseDown(int button);
-    static bool MouseUp(int button);
-    static bool MousePressed(int button);
-    static bool MouseReleased(int button);
+    static bool mouse_down(int button);
+    static bool mouse_up(int button);
+    static bool mouse_pressed(int button);
+    static bool mouse_released(int button);
 
     static glm::ivec2 mouse_pos;
 };

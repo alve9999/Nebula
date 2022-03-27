@@ -2,6 +2,13 @@
 #include <SDL2/SDL.h>
 #include "Input.h"
 
+
+glm::ivec2 Input::mouse_pos = glm::ivec2(0,0);
+const uint8_t* Input::state = SDL_GetKeyboardState(NULL);
+const uint8_t* Input::prev_state = SDL_GetKeyboardState(NULL);
+uint32_t Input::buttons = 0;
+uint32_t Input::prev_buttons = 0;
+
 void Input::Update()
 {
     prev_state = state;
