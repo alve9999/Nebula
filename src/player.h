@@ -1,10 +1,9 @@
+#include <glm/glm.hpp>
 
 class Player{
 public:
     Player();
 
-    float dx,dy;
-    
-    int x,y;
-
+    glm::vec2 vel;
+    glm::vec2 pos;
 };
