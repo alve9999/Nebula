@@ -36,6 +36,7 @@ void update()
 
 void render()
 {
+    SDL_SetRenderDrawColor(renderer, 123, 30, 0, 255);
     SDL_RenderClear(renderer);
 
     SDL_RenderPresent(renderer);
