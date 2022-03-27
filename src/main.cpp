@@ -1,28 +1,16 @@
 #include <SDL2/SDL.h>
 #include <iostream>
-#include "init_graphics.h"
-#include "Input.h"
+#include "game.h"
+
 int main(int argc, char* argv[])
 {
-    SDL_Window* window = init_graphics(800, 600);
-
-	bool quit = false;
-	SDL_Event e;
-
-	while (!quit)
+	init("Medieval Peasant Game", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, 0);
+	while (is_running)
 	{
-		SDL_PumpEvents();
-		Input::Update();
-		while (SDL_PollEvent(&e) != 0)
-		{
-			if (e.type == SDL_QUIT)
-			{
-				quit = true;
-			}
-		}
-		std::cout << Input::mouse_pos.x << " " << Input::mouse_pos.y << std::endl;
-		SDL_UpdateWindowSurface(window);
+		handle_events();
+		update();
+		render();
 	}
-
+	clean();
 	return 0;
 }
