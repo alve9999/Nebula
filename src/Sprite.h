@@ -12,6 +12,5 @@ public:
     double angle;
     SDL_RendererFlip flip;
 
-    Sprite(const char* asset_path, Rect src_rect = Rect(), glm::vec2 rotation_point = glm::vec2(), 
-           double angle = 0, SDL_RendererFlip flip = SDL_FLIP_NONE);
+    Sprite(const char* asset_path, Rect src_rect, glm::vec2 rotation_point, double angle, SDL_RendererFlip flip);
 };
