@@ -11,11 +11,11 @@ public:
     std::vector<std::vector<int>> tile_array;
     Tilemap(int x,int y);
 
-    enum Tiles{
-        dirt = 0,
-        stone = 1,
-        grass = 2,
-        cobblestone = 3
+    enum class Tiles {
+        Dirt,
+        Stone,
+        Grass,
+        Cobblestone,
     };
     std::map<int,SDL_Texture*>
 

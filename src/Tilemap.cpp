@@ -4,6 +4,6 @@ void Tilemap::load_textures(){
 
 }
 
-Tilemap::Tilemap(int x,int y){
-    
+Tilemap::Tilemap(int width, int height){
+
 }

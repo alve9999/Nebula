@@ -2,17 +2,18 @@
 
 struct Rect
 {
-    int width, height,x,y;
+    int x, y, width, height;
     Rect();
-    Rect(int width, int height,int x, int y);
+    Rect(int x, int y, int width, int height);
+    
     int top();
     int bottom();
     int left();
     int right();
-    void set_top(int top);
-    void set_bottom(int bottom);
-    void set_left(int left);
-    void set_right(int right);
+    void set_top(int y);
+    void set_bottom(int y);
+    void set_left(int x);
+    void set_right(int x);
 };
 
 struct Circle 

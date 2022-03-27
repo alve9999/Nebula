@@ -1,17 +1,13 @@
 #include "shapes.h"
-Rect::Rect(){
-    this->width = 0;
-    this->height = 0;
-    this->x = 0;
-    this->y = 0;
-}
-Rect::Rect(int width, int height,int x, int y)
-{
-    this->width = width;
-    this->height = height;
-    this->x = x;
-    this->y = y;
-}
+
+Rect::Rect() :
+    x(0), y(0), width(0), height(0)
+{}
+
+Rect::Rect(int x, int y, int width, int height) :
+    x(x), y(y), width(width), height(height)
+{}
+
 int Rect::top(){
     return this->y;
 }
@@ -24,6 +20,7 @@ int Rect::right(){
 int Rect::left(){
     return x;
 }
+
 void Rect::set_top(int top){
     y = top;
 }
