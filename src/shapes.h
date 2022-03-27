@@ -2,7 +2,8 @@
 
 struct Rect
 {
-    int width, height,x,y;
+    int width, height, x, y;
+    Rect();
     Rect(int width, int height,int x, int y);
     int top();
     int bottom();
