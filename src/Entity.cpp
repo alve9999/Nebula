@@ -3,3 +3,6 @@
 void Entity::update_position(){
     position += velocity;
 }
+void render(){
+    
+}
