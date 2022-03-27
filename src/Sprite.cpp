@@ -10,4 +10,18 @@ Sprite::Sprite(const char* asset_path, glm::vec2 rotation_point, double angle, S
     this->flip = flip;
     SDL_QueryTexture(texture, NULL, NULL, &width, &height);
     src_rect = Rect(0, 0, width, height);
+
+    sdl_src_rect = new SDL_Rect();
+    sdl_dst_rect = new SDL_FRect();
+    sdl_center = new SDL_FPoint();
+    sdl_src_rect->x = src_rect.x;
+    sdl_src_rect->y = src_rect.y;
+    sdl_src_rect->w = src_rect.width;
+    sdl_src_rect->h = src_rect.height;
+    sdl_dst_rect->x = 0;
+    sdl_dst_rect->y = 0;
+    sdl_dst_rect->w = width;
+    sdl_dst_rect->h = height;
+    sdl_center->x = rotation_point.x;
+    sdl_center->y = rotation_point.y;
 }
