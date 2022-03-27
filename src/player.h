@@ -1,7 +1,11 @@
 #include <glm/glm.hpp>
-#include "entity.h"
+#include <SDL2/SDL.h>
+#include "Entity.h"
+#include "Input.h"
 
-class Player : Entity{
+class Player : public Entity{
 public:
+    int speed;
     Player();
+    void update();
 };
