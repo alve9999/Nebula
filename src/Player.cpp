@@ -1,5 +1,5 @@
 #include "player.h"
-#include "asset_loading.h"
+#include "asset_loader.h"
 #include <iostream>
 
 Player::Player() {
