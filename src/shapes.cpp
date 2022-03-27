@@ -19,6 +19,18 @@ int Rect::right(){
 int Rect::left(){
     return x;
 }
+void Rect::set_top(int top){
+    y = top;
+}
+void Rect::set_bottom(int bottom){
+    height = bottom-y;
+}
+void Rect::set_right(int right){
+    width = right-x;
+}
+void Rect::set_left(int left){
+    x = left;
+}
 
 Circle::Circle(int radius,int x, int y)
 {
