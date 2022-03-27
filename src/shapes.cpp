@@ -1,14 +1,16 @@
 #include "shapes.h"
 
-Rect::Rect(int width, int height,glm::vec2 pos)
+Rect::Rect(int width, int height,int x, int y)
 {
     this->width = width;
     this->height = height;
-    this->pos = pos;
+    this->x = x;
+    this->y = y;
 }
 
-Circle::Circle(int radius,glm::vec2 pos)
+Circle::Circle(int radius,int x, int y)
 {
     this->radius = radius;
-    this->pos = pos;
+    this->x = x;
+    this->y = y;
 }
