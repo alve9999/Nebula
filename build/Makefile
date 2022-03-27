@@ -11,10 +11,13 @@ OBJ_FILES := $(patsubst $(SRC_DIR)/%.cpp,$(OBJ_DIR)/%.o,$(SRC_FILES)) $(patsubst
 
 all: a.exe
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
+$(OBJ_DIR):
+	mkdir $(OBJ_DIR)
+
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp $(OBJ_DIR)
 	g++ $(CPPFLAGS) $(CXXFLAGS) -c -o $@ $<
 
-$(OBJ_DIR)/%.o: $(SRC_DIR_LIBS)/%.cpp
+$(OBJ_DIR)/%.o: $(SRC_DIR_LIBS)/%.cpp $(OBJ_DIR)
 	g++ $(CPPFLAGS) $(CXXFLAGS) -c -o $@ $<
 
 a.exe: $(SRC_FILES) $(SRC_FILES_LIBS) $(OBJ_FILES)
