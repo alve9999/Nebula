@@ -29,5 +29,6 @@ void Player::update() {
     update_position();
     velocity.x = 0;
     velocity.y = 0;
+    std::cout << "Position: " << position.x << ", " << position.y << std::endl;
 }
 
