@@ -4,17 +4,14 @@
 #include <vector>
 
 class Tilemap{
-private:
-    void load_textures();
-
-
 public:
+    void load_textures();
     std::vector<std::vector<int>> tile_array;
     Tilemap(int x,int y);
-
+    
+    void render();
     enum class Tiles {
         Dirt,
-        Stone,
         Grass,
         Cobblestone
     };

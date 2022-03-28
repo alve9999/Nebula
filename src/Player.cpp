@@ -25,9 +25,8 @@ void Player::Update() {
     {
         velocity = glm::normalize(velocity);
         velocity *= speed;
-        update_position();
+        UpdatePosition();
         velocity.x = 0;
         velocity.y = 0;
     }
 }
-
