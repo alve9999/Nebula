@@ -2,6 +2,15 @@
 #include "asset_loader.h"
 #include <SDL2/SDL.h>
 
+void Sprite::change_dimensions(int width, int height){
+    sdl_dst_rect->w = width;
+    sdl_dst_rect->h = height;
+}
+void Sprite::change_dimensions(int size){
+    sdl_dst_rect->w = size;
+    sdl_dst_rect->h = size;
+}
+
 Sprite::Sprite(const char* asset_path, glm::vec2 rotation_point, double angle, SDL_RendererFlip flip)
 {
     texture = load_texture(asset_path);

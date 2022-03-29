@@ -16,7 +16,7 @@ void init(const char* title, int x, int y, int width, int height, int flags) {
     renderer = SDL_CreateRenderer(window, -1, 0);
     is_running = true;
     player = new Player();
-    tilemap = new Tilemap((int)Maps::first_map);
+    tilemap = new Tilemap((int)Maps::random_map);
 }
 
 void handle_events() {

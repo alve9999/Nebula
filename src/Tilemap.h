@@ -6,13 +6,14 @@
 #include "Sprite.h"
 
 enum class Tiles {
-        Dirt,
-        Grass,
-        Cobblestone
+    Dirt,
+    Grass,
+    Cobblestone
 };
 
 enum class Maps {
-    first_map
+    first_map,
+    random_map
 };
 
 class Tilemap{

@@ -16,7 +16,8 @@ public:
     SDL_Rect* sdl_src_rect;
     SDL_FRect* sdl_dst_rect;
     SDL_FPoint* sdl_center;
-
+    void change_dimensions(int width, int height);
+    void change_dimensions(int size);
     Sprite(const char* asset_path, glm::vec2 rotation_point = glm::vec2(), 
            double angle = 0, SDL_RendererFlip flip = SDL_FLIP_NONE);
 };
