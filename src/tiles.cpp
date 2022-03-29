@@ -2,11 +2,11 @@
 #include "asset_loader.h"
 #include "tiles.h"
 
-
+extern Tile Tiles[4] = {};
 void init_tiles()
 {
-    Tiles.push_back(Tile(nullptr, (int)TileType::None));
-    Tiles.push_back(Tile(new Sprite("assets/tiles/dirt.png"), (int)TileType::Solid));
-    Tiles.push_back(Tile(new Sprite("assets/tiles/grass.png"), (int)TileType::Solid));
-    Tiles.push_back(Tile(new Sprite("assets/tiles/stone.png"), (int)TileType::Solid));
+    Tiles[0] = (Tile(nullptr, (int)TileType::None));
+    Tiles[1] = (Tile(new Sprite("assets/tiles/dirt.bmp"), (int)TileType::Solid));
+    Tiles[2] = (Tile(new Sprite("assets/tiles/grass.bmp"), (int)TileType::Solid));
+    Tiles[3] = (Tile(new Sprite("assets/tiles/stone.bmp"), (int)TileType::Solid));
 }
