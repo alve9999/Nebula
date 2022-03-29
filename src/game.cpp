@@ -3,6 +3,7 @@
 #include "Input.h"
 #include "player.h"
 #include "Tilemap.h"
+#include "tiles.h"
 
 SDL_Window* window = nullptr;
 SDL_Renderer* renderer = nullptr;
@@ -16,7 +17,8 @@ void init(const char* title, int x, int y, int width, int height, int flags) {
     renderer = SDL_CreateRenderer(window, -1, 0);
     is_running = true;
     player = new Player();
-    tilemap = new Tilemap((int)Maps::random_map);
+    tilemap = new Tilemap((int)Maps::first_map, 32);
+    init_tiles();
 }
 
 void handle_events() {

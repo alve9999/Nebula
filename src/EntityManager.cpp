@@ -13,6 +13,27 @@ void EntityManager::RemoveEntity(Entity* entity)
     }
 }
 
+void EntityManager::HandleCollisions(Tilemap tilemap)
+{
+    for (Entity* entity : entities)
+    {
+        if (entity->collisionType == CollisionType::Tiles)
+        {
+            int right = ceil(entity->bounds.x + entity->bounds.width);   
+            int left = floor(entity->bounds.x);
+            int top = floor(entity->bounds.y);
+            int bottom = ceil(entity->bounds.y + entity->bounds.height);
+
+            for (int x = left; x < right; x++)
+            {
+                for (int y = top; y < bottom; y++)
+                {   
+                }
+            }
+        }
+    }
+}
+
 void EntityManager::Update()
 {
     for (int i = 0; i < entities.size(); i++)

@@ -5,12 +5,6 @@
 #include <glm/glm.hpp>
 #include "Sprite.h"
 
-enum class Tiles {
-    Dirt,
-    Grass,
-    Cobblestone
-};
-
 enum class Maps {
     first_map,
     random_map
@@ -18,11 +12,10 @@ enum class Maps {
 
 class Tilemap{
 public:
+    int tile_size;
     std::vector<std::vector<int>> tile_array;
-    Tilemap(int map);
 
-    void load_textures();
+    Tilemap(int map, int tile_size);
+
     void render();
-    Sprite* texture_map[3];
-    Sprite* dirt;
 };

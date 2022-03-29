@@ -1,5 +1,7 @@
+#pragma once
 #include <vector>
 #include "Entity.h"
+#include "Tilemap.h"
 
 class EntityManager
 {
@@ -8,6 +10,7 @@ public:
 
     void AddEntity(Entity* entity);
     void RemoveEntity(Entity* entity);
+    void HandleCollisions(Tilemap tilemap);
     void Update();
     void Render();
 };
