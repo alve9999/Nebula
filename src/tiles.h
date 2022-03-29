@@ -13,6 +13,6 @@ const int Dirt = 1;
 const int Grass = 2;
 const int Stone = 3;
 
-const Tile Tiles[];
+Tile Tiles[4];
 
 void init_tiles();

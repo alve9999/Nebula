@@ -20,7 +20,7 @@ public:
     glm::vec2 velocity;
     Rect bounds;
     CollisionType collision_type;
-
+    Entity();
     Entity(EntityManager creator);
 
     virtual void OnCollision(Entity* other);

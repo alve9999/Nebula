@@ -7,7 +7,12 @@
 Entity::Entity(EntityManager creator) {
     position = glm::vec2(0, 0);
     velocity = glm::vec2(0, 0);
-    creator.AddEntity(this);
+    //creator.AddEntity(this);
+    collision_type = CollisionType::None;
+}
+Entity::Entity(){
+    position = glm::vec2(0, 0);
+    velocity = glm::vec2(0, 0);
     collision_type = CollisionType::None;
 }
 
