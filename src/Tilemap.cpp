@@ -16,7 +16,7 @@ void Tilemap::render(){
             int tile_id = tile_array[i][j];
             if(tile_id != 0){
                 glm::vec2 pos = glm::vec2(j * tile_size, i * tile_size);
-                render_sprite(Tiles[tile_id].sprite, Rect(pos.x, pos.y, tile_size, tile_size));
+                render_sprite(Tiles[tile_id].sprite, glm::vec2(pos.x, pos.y));
             }
         }
     }
