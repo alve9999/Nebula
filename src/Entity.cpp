@@ -4,12 +4,12 @@
 #include <SDL2/SDL.h>
 #include <iostream>
 
-Entity::Entity(EntityManager creator) {
-    position = glm::vec2(0, 0);
-    velocity = glm::vec2(0, 0);
+//Entity::Entity(EntityManager creator) {
+//    position = glm::vec2(0, 0);
+//    velocity = glm::vec2(0, 0);
     //creator.AddEntity(this);
-    collision_type = CollisionType::None;
-}
+//    collision_type = CollisionType::None;
+//}
 Entity::Entity(){
     position = glm::vec2(0, 0);
     velocity = glm::vec2(0, 0);
@@ -24,4 +24,7 @@ void Entity::Render() {
     if (sprite != nullptr) {
         render_sprite(sprite, position);
     }    
+}
+void Entity::UpdatePosition() {
+    position += velocity;
 }

@@ -3,10 +3,10 @@
 Tile::Tile()
 {
     sprite = nullptr;
-    tile_type = TileType::None;   
+    tile_type = (int)TileType::None;   
 }
 
-Tile::Tile(Sprite* sprite, TileType tile_type)
+Tile::Tile(Sprite* sprite, int tile_type)
 {
     this->sprite = sprite;
     this->tile_type = tile_type;

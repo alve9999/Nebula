@@ -1,13 +1,17 @@
 #pragma once
-#include "tiles.h"
 #include "Sprite.h"
+enum class TileType {
+    None,
+    Solid,
+    OneWay
+};
 
 class Tile
 {
 public:
     Sprite* sprite;
-    TileType tile_type;
+    int tile_type;
 
     Tile();
-    Tile(Sprite* sprite, TileType tile_type);
+    Tile(Sprite* sprite, int tile_type);
 };

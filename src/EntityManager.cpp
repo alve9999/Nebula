@@ -17,7 +17,7 @@ void EntityManager::HandleCollisions(Tilemap tilemap)
 {
     for (Entity* entity : entities)
     {
-        if (entity->collision_type == CollisionType::Tiles)
+        if (entity->collision_type == CollisionType::Tiless)
         {
             int right = ceil(entity->bounds.x + entity->bounds.width);   
             int left = floor(entity->bounds.x);
