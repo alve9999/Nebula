@@ -28,3 +28,6 @@ void Entity::Render() {
 void Entity::UpdatePosition() {
     position += velocity;
 }
+
+void Entity::OnCollision(Entity* other) {
+}

@@ -1,6 +1,8 @@
 #include "sprite_renderer.h"
 #include "asset_loader.h"
 #include "tiles.h"
+
+
 void init_tiles()
 {
     Tiles.push_back(Tile(nullptr, (int)TileType::None));

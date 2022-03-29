@@ -8,6 +8,6 @@ const int Dirt = 1;
 const int Grass = 2;
 const int Stone = 3;
 
-std::vector<Tile> Tiles = {};
+extern std::vector<Tile> Tiles;
 
 void init_tiles();
