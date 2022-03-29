@@ -20,7 +20,6 @@ public:
     Rect bounds;
     CollisionType collision_type;
     Entity();
-    //Entity(EntityManager creator);
     void UpdatePosition();
     virtual void OnCollision(Entity* other);
     virtual void Update();
