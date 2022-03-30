@@ -2,11 +2,11 @@
 #include "asset_loader.h"
 #include <SDL2/SDL.h>
 
-void Sprite::change_dimensions(int width, int height){
+void Sprite::change_dimensions(int width, int height) {
     sdl_dst_rect->w = width;
     sdl_dst_rect->h = height;
 }
-void Sprite::change_dimensions(int size){
+void Sprite::change_dimensions(int size) {
     sdl_dst_rect->w = size;
     sdl_dst_rect->h = size;
 }

@@ -6,6 +6,7 @@
 
 Tilemap::Tilemap(int map, int tile_size)
 {
+    this->tile_size = tile_size;
     tile_array = load_map(map);
 }
 
@@ -20,7 +21,9 @@ void Tilemap::Render() {
             int tile_id = tile_array[i][j];
             if(tile_id != 0) {
                 glm::vec2 pos = glm::vec2(j * tile_size, i * tile_size);
-                render_sprite(Tiles[tile_id].sprite, glm::vec2(pos.x, pos.y));
+                if (Tiles[tile_id].sprite != nullptr) {
+                    render_sprite(Tiles[tile_id].sprite, pos, tile_size, tile_size);
+                }
             }
         }
     }
