@@ -8,5 +8,7 @@ public:
 
     Player();
 
+    void UpdateXPos();
+    void UpdateYPos();
     void Update();
 };

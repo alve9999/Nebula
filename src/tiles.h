@@ -1,6 +1,6 @@
 #pragma once
-#include <vector>
 #include "Tile.h"
+#include <vector>
 
 void init_tiles();
 

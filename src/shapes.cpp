@@ -8,30 +8,34 @@ Rect::Rect(int x, int y, int width, int height) :
     x(x), y(y), width(width), height(height)
 {}
 
-int Rect::top(){
+int Rect::top() {
     return this->y;
 }
-int Rect::bottom(){
+int Rect::bottom() {
     return y+height;
 }
-int Rect::right(){
+int Rect::right() {
     return x+width;
 }
-int Rect::left(){
+int Rect::left() {
     return x;
 }
 
-void Rect::set_top(int top){
+void Rect::set_top(int top) {
     y = top;
 }
-void Rect::set_bottom(int bottom){
+void Rect::set_bottom(int bottom) {
     height = bottom-y;
 }
-void Rect::set_right(int right){
+void Rect::set_right(int right) {
     width = right-x;
 }
-void Rect::set_left(int left){
+void Rect::set_left(int left) {
     x = left;
+}
+
+bool Rect::Intersects(Rect other) {
+    return !(other.left() > right() || other.right() < left() || other.top() > bottom() || other.bottom() < top());
 }
 
 Circle::Circle(int radius,int x, int y)

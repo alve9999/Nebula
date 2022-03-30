@@ -1,7 +1,7 @@
 #pragma once
-#include <vector>
 #include "Entity.h"
 #include "Tilemap.h"
+#include <vector>
 
 class EntityManager
 {

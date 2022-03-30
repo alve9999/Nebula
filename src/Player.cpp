@@ -8,6 +8,14 @@ Player::Player() {
     sprite = new Sprite("../sprites/player.bmp");
 }
 
+void Player::UpdateXPos() {
+    position.x += velocity.x;
+}
+
+void Player::UpdateYPos() {
+    position.y += velocity.y;
+}
+
 void Player::Update() {
     if (Input::KeyDown(SDL_SCANCODE_LEFT)) {
         velocity.x = -1;
@@ -25,7 +33,8 @@ void Player::Update() {
     {
         velocity = glm::normalize(velocity);
         velocity *= speed;
-        UpdatePosition();
+        UpdateXPos();
+        UpdateYPos();
         velocity.x = 0;
         velocity.y = 0;
     }

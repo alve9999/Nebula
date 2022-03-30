@@ -16,9 +16,9 @@ void init(const char* title, int x, int y, int width, int height, int flags) {
     window = SDL_CreateWindow(title, x, y, width, height, flags);
     renderer = SDL_CreateRenderer(window, -1, 0);
     is_running = true;
+    init_tiles();
     player = new Player();
     tilemap = new Tilemap((int)Maps::first_map, 32);
-    init_tiles();
 }
 
 void handle_events() {
@@ -43,7 +43,7 @@ void update() {
 void render() {
     SDL_SetRenderDrawColor(renderer, 123, 30, 0, 255);
     SDL_RenderClear(renderer);
-    tilemap->render();
+    tilemap->Render();
     player->Render();
     SDL_RenderPresent(renderer);
 }

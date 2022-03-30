@@ -1,13 +1,14 @@
 #pragma once
 #include <glm/glm.hpp>
 #include <SDL2/SDL_image.h>
-#include "Sprite.h"
 #include "shapes.h"
+#include "Sprite.h"
+#include "Tilemap.h"
 
-enum CollisionType
+enum class CollisionType
 {
     None,
-    Tiless,
+    Tiles,
     Entities,
     All
 };
@@ -19,9 +20,11 @@ public:
     glm::vec2 velocity;
     Rect bounds;
     CollisionType collision_type;
+    
     Entity();
-    void UpdatePosition();
+    
     virtual void OnCollision(Entity* other);
+    virtual void OnCollision(Tilemap tilemap, int x, int y);
     virtual void Update();
     virtual void Render();
 };

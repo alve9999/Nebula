@@ -10,6 +10,12 @@ Entity::Entity(){
     collision_type = CollisionType::None;
 }
 
+void Entity::OnCollision(Entity* other){
+}
+
+void Entity::OnCollision(Tilemap tilemap, int x, int y) {
+}
+
 void Entity::Update() {
 
 }
@@ -18,10 +24,4 @@ void Entity::Render() {
     if (sprite != nullptr) {
         render_sprite(sprite, position);
     }    
-}
-void Entity::UpdatePosition() {
-    position += velocity;
-}
-
-void Entity::OnCollision(Entity* other) {
 }

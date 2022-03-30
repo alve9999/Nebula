@@ -15,6 +15,7 @@ struct Rect
     void set_bottom(int y);
     void set_left(int x);
     void set_right(int x);
+    bool Intersects(Rect other);
 };
 
 struct Circle 

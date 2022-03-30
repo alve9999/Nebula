@@ -1,5 +1,6 @@
 #pragma once
 #include "Sprite.h"
+
 enum class TileType {
     None,
     Solid,
@@ -10,8 +11,8 @@ class Tile
 {
 public:
     Sprite* sprite;
-    int tile_type;
+    TileType tile_type;
 
     Tile();
-    Tile(Sprite* sprite, int tile_type);
+    Tile(Sprite* sprite, TileType tile_type);
 };
