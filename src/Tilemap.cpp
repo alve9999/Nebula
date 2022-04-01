@@ -12,7 +12,7 @@ Tilemap::Tilemap(int map, int tile_size)
 
 Rect Tilemap::GetTileBounds(int x, int y)
 {
-    return Rect(x * tile_size, y * tile_size, tile_size, tile_size);
+    return Rect((float)(x * tile_size), (float)(y * tile_size), tile_size, tile_size);
 }
 
 void Tilemap::Render() {

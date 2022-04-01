@@ -10,7 +10,9 @@ public:
 
     void AddEntity(Entity* entity);
     void RemoveEntity(Entity* entity);
-    void HandleCollisions(Tilemap tilemap);
-    void Update();
+    void Update(Tilemap tilemap);
     void Render();
+    
+private:
+    std::vector<Rect> GetCollisions(Entity* entity, Tilemap tilemap);
 };

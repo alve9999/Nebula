@@ -4,38 +4,39 @@ Rect::Rect() :
     x(0), y(0), width(0), height(0)
 {}
 
-Rect::Rect(int x, int y, int width, int height) :
+Rect::Rect(float x, float y, int width, int height) :
     x(x), y(y), width(width), height(height)
 {}
 
-int Rect::top() {
+float Rect::top() {
     return this->y;
 }
-int Rect::bottom() {
+float Rect::bottom() {
     return y+height;
 }
-int Rect::right() {
+float Rect::right() {
     return x+width;
 }
-int Rect::left() {
+float Rect::left() {
     return x;
 }
 
-void Rect::set_top(int top) {
+void Rect::set_top(float top) {
     y = top;
 }
-void Rect::set_bottom(int bottom) {
-    height = bottom-y;
+void Rect::set_bottom(float bottom) {
+    y = bottom - height;
 }
-void Rect::set_right(int right) {
-    width = right-x;
+void Rect::set_right(float right) {
+    x = right - width;
 }
-void Rect::set_left(int left) {
+void Rect::set_left(float left) {
     x = left;
 }
 
 bool Rect::Intersects(Rect other) {
-    return !(other.left() > right() || other.right() < left() || other.top() > bottom() || other.bottom() < top());
+    return left() < other.right() && right() > other.left() &&
+           top() < other.bottom() && bottom() > other.top();
 }
 
 Circle::Circle(int radius,int x, int y)

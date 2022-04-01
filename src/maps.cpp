@@ -5,11 +5,15 @@
 std::vector<std::vector<int>> load_map(int map_num) {
     std::vector<std::vector<int>> map;
     if(map_num==0) {
-        map = { { Dirt, Dirt, Dirt, Dirt, Dirt },
-                { Dirt, Air, Air, Air, Dirt },
-                { Dirt, Air, Air, Air, Dirt },
-                { Dirt, Air, Air, Air, Dirt },
-                { Dirt, Dirt, Dirt, Dirt, Dirt } };
+        map = { { Air, Air, Air, Air, Air, Air, Air, Air, Air },
+                { Air, Air, Air, Air, Air, Air, Air, Air, Air },
+                { Air, Air, Dirt, Air, Air, Air, Air, Air, Air },
+                { Air, Air, Air, Air, Air, Air, Air, Air, Air },
+                { Air, Air, Air, Air, Air, Air, Air, Air, Air},
+                { Air, Air, Air, Air, Air, Air, Air, Air, Air },
+                { Air, Air, Air, Air, Air, Air, Air, Air, Air },
+                { Air, Air, Air, Air, Air, Air, Air, Air, Air },
+                { Air, Air, Air, Air, Air, Air, Air, Air, Air } };
     }
     else if(map_num==1) {
         std::random_device rd;

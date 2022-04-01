@@ -6,7 +6,7 @@ class Player : public Entity
 public:
     int speed = 1;
 
-    Player();
+    Player(int width, int height);
 
     void UpdateXPos();
     void UpdateYPos();

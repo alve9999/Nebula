@@ -22,9 +22,12 @@ public:
     CollisionType collision_type;
     
     Entity();
+    Entity(int width, int height);
     
     virtual void OnCollision(Entity* other);
     virtual void OnCollision(Tilemap tilemap, int x, int y);
+    virtual void ResolveCollisionsX(std::vector<Rect> collisions);
+    virtual void ResolveCollisionsY(std::vector<Rect> collisions);
     virtual void Update();
     virtual void Render();
 };

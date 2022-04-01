@@ -3,18 +3,19 @@
 
 struct Rect
 {
-    int x, y, width, height;
+    float x, y;
+    int width, height;
     Rect();
-    Rect(int x, int y, int width, int height);
+    Rect(float x, float y, int width, int height);
     
-    int top();
-    int bottom();
-    int left();
-    int right();
-    void set_top(int y);
-    void set_bottom(int y);
-    void set_left(int x);
-    void set_right(int x);
+    float top();
+    float bottom();
+    float left();
+    float right();
+    void set_top(float y);
+    void set_bottom(float y);
+    void set_left(float x);
+    void set_right(float x);
     bool Intersects(Rect other);
 };
 

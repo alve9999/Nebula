@@ -4,19 +4,14 @@
 #include "Sprite.h"
 #include <iostream>
 
-Player::Player() {
+Player::Player(int width, int height) : Entity(width, height) {
     sprite = new Sprite("../sprites/player.bmp");
-}
-
-void Player::UpdateXPos() {
-    position.x += velocity.x;
-}
-
-void Player::UpdateYPos() {
-    position.y += velocity.y;
+    collision_type = CollisionType::Tiles;
 }
 
 void Player::Update() {
+    velocity.x = 0;
+    velocity.y = 0;
     if (Input::KeyDown(SDL_SCANCODE_LEFT)) {
         velocity.x = -1;
     }
@@ -33,9 +28,5 @@ void Player::Update() {
     {
         velocity = glm::normalize(velocity);
         velocity *= speed;
-        UpdateXPos();
-        UpdateYPos();
-        velocity.x = 0;
-        velocity.y = 0;
     }
 }
